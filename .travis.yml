@@ -1,0 +1,16 @@
+language: ruby
+cache:
+- bundler
+before_script:
+- bundle exec rake db:create
+- bundle exec rake db:migrate
+- bundle exec rake assets:precompile
+deploy:
+  provider: heroku
+  api_key:
+    secure: JN+nKIqMVlowfHxhapyV8jEs+tWzytK7iBbEQZoWQdi+SnCehT8vMBh4TDC/tO6Ce5RAQ9kZsh54XufhLovE48TmVnDkOdLO5MJskApsfQq1DrgZk8ThqoIa32ZnkvCzMpvD5zTiNK7zl2B+Ly69YHD7nLmoA9OkXVtyYOSoZ5E+nK7WuuuKildCcX0ENeyNUb6q2qYypfW+GFlqgXmzTKZ5acneq9JQEYH+O5T5AiYh0yDDn3AWRt7503hp7G4KALmoO5SZGUWazPKR5eBeRle02wXJA4qHozwPCVcUrBn5MZ+CV+1REay1v/cHa+RjFjLpmcVyHIgx9ds96T0kIVtfgNivDhYY4heN0ynmnxSDKSYopywSlYS8ZSG4LzDclN1v9gYYpBXdkUx6LupnJ4Ib8mjTLfT+2XFi0wYHWNkl7DhSyFOolIi21GgiBF/l/05pN/d8ifQ1jXEBtjDhtNk1qNPqh6lq2UcqaL8b/bRh2KGV93d7qaKTkrewxkzACRj7Pzc1ihn2d65iMCLODl2380hlD2YQEa5aUg2O6MqigXuMo//m0gPdb0a25Ha9V/3lWcgLYhDd9eHrpq+JR3IxgQKvZ7QQWqddr+En2VB18JDPDd7uihVO0nFBRwbZQdfnF/vupyrkVkWNA6mfRtR7K52JNBHpvRZigLBivTQ=
+
+  app: secret-savannah-44807
+  on:
+    repo: nax2uk/13581
+
